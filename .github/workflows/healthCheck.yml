@@ -2,8 +2,8 @@ name: healthCheck
 
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
+  # schedule:
+  #   - cron: '*/10 * * * *'
 
 jobs:
   periodic_check:
