@@ -34,6 +34,7 @@ jobs:
           wait-on: http://localhost:5000
       - name: deploy
         if: ${{ github.event_name == 'push' }}
+        if: ${{ !contains(toJson(github.event.commits.*.message), '#skip') }}
         run: flyctl deploy --remote-only
   tag_release:
     needs: [simple_deployment_pipeline]
